@@ -1,6 +1,7 @@
 import time
 class Module:
 	id = 0
+	modulelist = []
 	def __init__(self):
 		self.id = Module.id
 		self.modules = {}
@@ -8,6 +9,7 @@ class Module:
 		self.delnotify = {}
 		self.specs = []
 		self.terminate = False
+		Module.modulelist.append(self)
 		Module.id += 1
 	def run(self):
 		pass

@@ -3,6 +3,11 @@ class Runtime:
 	threads = {}
 	modules = {}
 	@staticmethod
+	def attachall():
+		for s in Module.modulelist:
+			if s.id not in modules:
+				attach(s)
+	@staticmethod
 	def attach(module):
 		Runtime.modules[module.id] = module
 		Runtime.threads[module.id] = threading.Thread(None,module.thread)
