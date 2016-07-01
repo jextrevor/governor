@@ -4,7 +4,7 @@ class Runtime:
 	modules = {}
 	@staticmethod
 	def attachall():
-		from module import Module
+		from governor.module import Module
 		for s in Module.modulelist:
 			if s.id not in modules:
 				attach(s)
