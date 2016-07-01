@@ -7,7 +7,7 @@ class Runtime:
 		from governor.module import Module
 		for s in Module.modulelist:
 			if s.id not in Runtime.modules:
-				attach(s)
+				Runtime.attach(s)
 	@staticmethod
 	def attach(module):
 		Runtime.modules[module.id] = module
