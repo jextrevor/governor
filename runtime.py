@@ -9,6 +9,11 @@ class Runtime:
 		Runtime.threads[module.id].daemon = True
 		Runtime.threads[module.id].start()
 	@staticmethod
+	def static(module):
+		Runtime.modules[module.id] = module
+		Runtime.threads[module.id] = threading.Thread(None,module.thread)
+		Runtime.threads[module.id].start()
+	@staticmethod
 	def detach(id):
 		Runtime.modules[id].terminate = True
 		del Runtime.modules[id]

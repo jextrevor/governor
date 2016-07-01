@@ -41,6 +41,8 @@ class Module:
 				return False
 		else:
 			return False
+	def release(self):
+		self.usenotify = dict.fromkeys(self.usenotify, 0)
 	def unlock(self,id):
 		self.usenotify[id] -= 1
 		if self.usenotify[id] < 0:
